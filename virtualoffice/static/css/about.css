@@ -6,12 +6,67 @@
 
 /* Hero lebih pendek & elegan */
 .about-hero {
-    background: var(--primary-gradient);
-    padding: 120px 0 80px 0;
-    border-radius: 0 0 40px 40px;
+    min-height: 55vh;
+    background: linear-gradient(145deg, #29326d, #476eb5);
     position: relative;
+    overflow: hidden;
 }
 
+.about-hero::after {
+    content: "";
+    position: absolute;
+    bottom: -80px;
+    right: -80px;
+    width: 300px;
+    height: 300px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 50%;
+}
+
+.about-hero h1 {
+    letter-spacing: 1px;
+}
+
+.about-hero p {
+    opacity: 0.9;
+}
+/* Profile Image Container */
+.profile-img-container {
+    position: relative;
+    padding: 15px;
+}
+
+.profile-img-container img {
+    border-radius: 30px;
+    transition: transform 0.5s ease;
+}
+
+.profile-img-container:hover img {
+    transform: scale(1.02);
+}
+
+/* Pricing Feature Highlight */
+.pricing-feature {
+    padding: 15px;
+    border-radius: 15px;
+    background: #f8fbff;
+    border: 1px dashed rgba(71, 110, 181, 0.3);
+    transition: all 0.3s ease;
+}
+
+.pricing-feature:hover {
+    background: #ffffff;
+    border-style: solid;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.text-primary {
+    color: #476eb5 !important;
+}
+
+.shadow-2xl {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+}
 /* Kartu Visi Misi yang menyatu */
 .vision-card {
     background: #fff;
@@ -71,3 +126,120 @@
     background: #fdfdfd;
     border: 1px solid #f0f0f0;
 }
+
+/* Container Card Visi Misi */
+.vm-card {
+    background: #fff;
+    padding: 50px 40px;
+    height: 100%;
+    border-radius: 0; /* Kotak sempurna sesuai permintaan */
+    transition: all 0.4s ease;
+    border: 1px solid #f0f0f0;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.03);
+    position: relative;
+}
+
+/* Garis aksen di sisi kiri */
+.visi-border {
+    border-left: 6px solid var(--navy-dark);
+}
+
+.misi-border {
+    border-left: 6px solid var(--blue-bright);
+}
+
+/* Hover Effect */
+.vm-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(41, 50, 109, 0.08);
+}
+
+/* Icon Styling */
+.vm-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.vm-icon {
+    width: 60px;
+    height: 60px;
+    background: #f8fbff;
+    color: var(--navy-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    border-radius: 0; /* Kotak */
+    border: 1px solid rgba(41, 50, 109, 0.1);
+}
+
+.vm-card:hover .vm-icon {
+    background: var(--primary-gradient);
+    color: #fff;
+    border-color: transparent;
+}
+
+/* List Styling untuk Misi */
+.vm-card ul li span {
+    color: #555;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+.text-primary {
+    color: var(--blue-bright) !important;
+}
+
+    .hero-gradient {
+        background: var(--primary-gradient);
+        padding: 120px 0 80px 0;
+        border-radius: 0 0 50px 50px;
+    }
+
+    .feature-icon {
+        width: 65px;
+        height: 65px;
+        background: rgba(41, 50, 109, 0.1);
+        color: var(--navy-dark);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 18px;
+        margin-bottom: 25px;
+        font-size: 1.6rem;
+        border: 1px solid rgba(41, 50, 109, 0.1);
+    }
+
+    .tech-stack-card {
+        border: 1px solid #eee;
+        border-radius: 20px;
+        transition: all 0.3s ease;
+        background: #fff;
+    }
+
+    .tech-stack-card:hover {
+        transform: translateY(-8px);
+        border-color: #476eb5;
+        box-shadow: 0 15px 30px rgba(41, 50, 109, 0.1);
+    }
+
+    .tech-stack-card i {
+        color: var(--navy-dark);
+        transition: 0.3s;
+    }
+
+    .tech-stack-card:hover i {
+        color: #476eb5;
+    }
+
+    .cta-box {
+        background: var(--primary-gradient);
+        border-radius: 40px;
+        padding: 60px 20px;
+    }
+
+    .btn-light {
+        color: var(--navy-dark) !important;
+        border: none;
+    }

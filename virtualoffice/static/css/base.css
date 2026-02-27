@@ -6,11 +6,11 @@ body {
     font-size: 20px;
     text-decoration: none;
     color: #29326d;
-    gap: 10px;
+
 }
 
 .brand-logo {
-    width: 35px;   /* bisa ubah 28–40px sesuai selera */
+    width: 40px;   /* bisa ubah 28–40px sesuai selera */
     height: auto;
 }
 /* NAVBAR CUSTOM */

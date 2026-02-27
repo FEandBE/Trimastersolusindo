@@ -3,6 +3,10 @@ from .models import Paket, RuangRapat, Coworking,Order,Promo
 from django.http import JsonResponse
 from decimal import Decimal
 from django.utils import timezone
+from django.core.mail import EmailMessage
+from django.conf import settings
+from django.contrib import messages
+from django.shortcuts import redirect
 
 def home(request):
     paket_list = Paket.objects.filter(aktif=True)
@@ -50,7 +54,53 @@ def testimonial(request):
 
 
 def kontak(request):
+    if request.method == 'POST':
+        # 1. Ambil data dari form
+        nama = request.POST.get('name')
+        email_user = request.POST.get('email')
+        phone = request.POST.get('phone')
+        layanan = request.POST.get('service')
+        pesan = request.POST.get('message')
+
+        # 2. Format isi email untuk kamu (admin)
+        isi_email = f"""
+        Halo Tim BloomsVO, ada inquiry baru dari website!
+        
+        -------------------------------------------
+        DETAIL PELANGGAN:
+        Nama      : {nama}
+        Email     : {email_user}
+        WhatsApp  : {phone}
+        Layanan   : {layanan}
+        -------------------------------------------
+        
+        ISI PESAN:
+        {pesan}
+        
+        --
+        Email ini dikirim otomatis via sistem BloomsVO.
+        """
+
+        # 3. Setting pengiriman email
+        email_obj = EmailMessage(
+            subject=f'Inquiry {layanan.upper()} - {nama}',
+            body=isi_email,
+            from_email=settings.DEFAULT_FROM_EMAIL,
+            to=['waduhxonepiece@gmail.com'], # Email kamu untuk terima laporan
+            reply_to=[email_user], # Klik 'Reply' di Gmail langsung ke pelanggan
+        )
+
+        try:
+            email_obj.send(fail_silently=False)
+            messages.success(request, 'Pesan Anda berhasil terkirim! Tim kami akan segera menghubungi Anda.')
+        except Exception as e:
+            print(f"ERROR EMAIL: {e}") # Ini akan memunculkan error asli di terminal/cmd kamu
+            messages.error(request, f'Maaf, terjadi kendala teknis: {e}')
+            
+        return redirect('kontak')
+
     return render(request, 'profile/contact.html')
+
 
 def tentang(request):
     return render(request, 'profile/about.html')
@@ -213,3 +263,5 @@ def ajax_order(request):
         "status": "error",
         "message": "Metode harus POST"
     })
+
+

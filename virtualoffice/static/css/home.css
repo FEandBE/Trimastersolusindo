@@ -150,6 +150,8 @@
     box-shadow: 0 6px 14px rgba(13, 110, 253, 0.3);
 }
 
+
+
 /* ----------------------------------------------
    4. WORKSPACE CARDS (PRODUK)
 ---------------------------------------------- */
@@ -394,4 +396,84 @@
 img[src*="default.jpg"] {
     object-fit: cover;
     background: #f1f3f5;
+}
+
+
+/* Luxury Card Styling */
+.luxury-card {
+    background: #ffffff;
+    padding: 40px 30px;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    text-align: center;
+    height: 100%;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+}
+
+/* Garis tipis di bagian bawah card saat hover */
+.luxury-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #29326d, #476eb5);
+    transition: width 0.4s ease;
+}
+
+.luxury-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 40px rgba(41, 50, 109, 0.08);
+    border-color: rgba(41, 50, 109, 0.1);
+}
+
+.luxury-card:hover::after {
+    width: 100%;
+}
+
+/* Icon Styling */
+.luxury-icon-wrapper {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #f8f9ff 0%, #eef2ff 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    border-radius: 15px;
+    font-size: 28px;
+    color: #29326d;
+    transition: all 0.4s ease;
+}
+
+.luxury-card:hover .luxury-icon-wrapper {
+    background: linear-gradient(135deg, #29326d 0%, #476eb5 100%);
+    color: #ffffff;
+    transform: rotateY(180deg);
+}
+
+/* Typography */
+.luxury-card h4 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #29326d;
+    margin-bottom: 15px;
+}
+
+.luxury-card p {
+    font-size: 0.9rem;
+    color: #6c757d;
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+
+/* Highlight Card (Opsional) */
+.luxury-card.active {
+    border: 1px solid rgba(41, 50, 109, 0.1);
+    background: #fff;
+    box-shadow: 0 15px 35px rgba(41, 50, 109, 0.05);
 }

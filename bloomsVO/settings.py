@@ -101,6 +101,15 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp-relay.brevo.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = '9aa500001@smtp-brevo.com'
+EMAIL_HOST_PASSWORD = '4tqdcNys1TWOm8Qf' # Key kamu
+DEFAULT_FROM_EMAIL = 'X one piece <waduhxonepiece@gmail.com>'
+
 # Internationalization
 # https://docs.djangoproject.com/en/6.0/topics/i18n/
 

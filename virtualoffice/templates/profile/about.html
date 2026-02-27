@@ -6,122 +6,118 @@
 {% block extra_css %}
 <link href="{% static 'css/about.css' %}" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-<style>
-    :root {
-        --primary-gradient: linear-gradient(145deg, #29326d, #476eb5);
-        --navy-dark: #29326d;
-        --soft-bg: #f8f9fa;
-    }
 
-    .hero-gradient {
-        background: var(--primary-gradient);
-        padding: 120px 0 80px 0;
-        border-radius: 0 0 50px 50px;
-    }
-
-    .feature-icon {
-        width: 65px;
-        height: 65px;
-        background: rgba(41, 50, 109, 0.1);
-        color: var(--navy-dark);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 18px;
-        margin-bottom: 25px;
-        font-size: 1.6rem;
-        border: 1px solid rgba(41, 50, 109, 0.1);
-    }
-
-    .tech-stack-card {
-        border: 1px solid #eee;
-        border-radius: 20px;
-        transition: all 0.3s ease;
-        background: #fff;
-    }
-
-    .tech-stack-card:hover {
-        transform: translateY(-8px);
-        border-color: #476eb5;
-        box-shadow: 0 15px 30px rgba(41, 50, 109, 0.1);
-    }
-
-    .tech-stack-card i {
-        color: var(--navy-dark);
-        transition: 0.3s;
-    }
-
-    .tech-stack-card:hover i {
-        color: #476eb5;
-    }
-
-    .cta-box {
-        background: var(--primary-gradient);
-        border-radius: 40px;
-        padding: 60px 20px;
-    }
-
-    .btn-light {
-        color: var(--navy-dark) !important;
-        border: none;
-    }
-</style>
 {% endblock %}
 
 {% block content %}
 
-<section class="hero-gradient text-white text-center">
-    <div class="container">
-        <h1 class="display-4 fw-bold mb-3">Solusi Bisnis Modern</h1>
-        <p class="lead opacity-75 mx-auto" style="max-width: 750px;">
-            Meningkatkan efisiensi dan profesionalisme bisnis Anda melalui ekosistem kerja yang cerdas dan terintegrasi.
-        </p>
+<section class="about-hero d-flex align-items-center">
+    <div class="container text-center text-white">
+        <h1 class="display-4 fw-bold">About Us </h1>
     </div>
 </section>
 
-<section class="container py-5 mt-5">
-    <div class="row align-items-center g-5">
-        
-        <div class="col-lg-6">
-            <h6 class="fw-bold text-uppercase mb-3" style="color: #476eb5; letter-spacing: 1px;">Kenapa BloomsVO?</h6>
-            <h2 class="fw-bold mb-4" style="color: var(--navy-dark);">Kami Menjawab Tantangan Bisnis Anda</h2>
-            <p class="text-muted mb-4 fs-5">
-                Banyak UMKM dan startup menghadapi kendala biaya kantor fisik yang tinggi serta administrasi yang rumit. 
-                Kami hadir memberikan penghematan hingga <strong>90%</strong> dibandingkan biaya kantor tradisional.
-            </p>
-            
-            <div class="row g-3">
-                <div class="col-sm-6">
-                    <div class="p-3 border-start border-4 rounded-end bg-light" style="border-color: var(--navy-dark) !important;">
-                        <h6 class="fw-bold mb-1">Hemat Biaya</h6>
-                        <small class="text-muted">Solusi terjangkau untuk operasional harian.</small>
+<section class="py-5" style="background: #ffffff;">
+    <div class="container py-5">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-5">
+                <div class="position-relative">
+                    <div class="profile-img-container">
+                        <img src="{% static 'img/blooms.jpeg' %}" class="img-fluid rounded-5 shadow-2xl" alt="BloomsVO Office">
+                       
                     </div>
                 </div>
-                <div class="col-sm-6">
-                    <div class="p-3 border-start border-4 rounded-end bg-light" style="border-color: #476eb5 !important;">
-                        <h6 class="fw-bold mb-1">Legal & Resmi</h6>
-                        <small class="text-muted">Alamat bisnis terdaftar dan kredibel.</small>
+            </div>
+
+            <div class="col-lg-7">
+                <div class="ps-lg-4">
+                    <h6 class="text-primary fw-bold text-uppercase mb-3" style="letter-spacing: 2px;">Tentang BloomsVO</h6>
+                    <h2 class="display-5 fw-bold mb-4" style="color: #29326d; line-height: 1.2;">
+                        Solusi Ruang Kerja Cerdas untuk <span style="color: #476eb5;">Eksistensi Bisnis Anda</span>
+                    </h2>
+                    <p class="text-muted fs-5 mb-4">
+                        BloomsVO hadir sebagai partner strategis bagi startup, freelancer, dan UMKM dalam membangun citra profesional. Kami menyediakan ekosistem kerja fleksibel yang dirancang untuk mendukung efisiensi tanpa mengorbankan prestise.
+                    </p>
+                    
+                    <div class="row g-4 mb-5">
+                        <div class="col-md-4">
+                            <div class="pricing-feature">
+                                <span class="small text-muted d-block">Virtual Office</span>
+                                <h5 class="fw-bold mb-0">Mulai <span class="text-primary">100K</span><small>/bln</small></h5>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="pricing-feature">
+                                <span class="small text-muted d-block">Meeting Room</span>
+                                <h5 class="fw-bold mb-0">Hanya <span class="text-primary">50K</span><small>/jam</small></h5>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="pricing-feature">
+                                <span class="small text-muted d-block">Co-working</span>
+                                <h5 class="fw-bold mb-0 text-primary">Workspace</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-flex align-items-center gap-3">
+                        <a href="{% url 'daftar_paket' %}" class="btn btn-primary btn-lg px-4 rounded-pill shadow">Lihat Paket Kami</a>
+                        <div class="vr mx-2"></div>
+                        <p class="mb-0 small text-muted">Tersedia Paket:<br><strong>Basic, Standard & Premium</strong></p>
                     </div>
                 </div>
-                
             </div>
         </div>
-
-        <div class="col-lg-6">
-            <div class="position-relative">
-                <img src="{% static 'img/blooms.jpeg' %}" 
-                     class="img-fluid rounded-4 shadow-lg w-100" 
-                     alt="Modern Office"
-                     style="max-height: 450px; object-fit: cover; object-position: center;">
-                
-                <div class="position-absolute d-none d-md-block" 
-                     style="top: -20px; right: -20px; width: 100px; height: 100px; background: var(--primary-gradient); z-index: -1; border-radius: 20px; opacity: 0.2;">
-                </div>
-            </div>
-        </div>
-
     </div>
 </section>
+
+<section class="py-5" style="background-color: #ffffff;">
+    <div class="container py-5">
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="vm-card visi-border">
+                    <div class="vm-header mb-4">
+                        <div class="vm-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h3 class="fw-bold m-0" style="color: var(--navy-dark);">Visi Kami</h3>
+                    </div>
+                    <p class="lead text-muted">
+                        Menjadi ekosistem ruang kerja fleksibel nomor satu di Indonesia yang mendefinisikan ulang cara startup dan UMKM bertumbuh melalui efisiensi biaya dan profesionalisme tanpa batas.
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="vm-card misi-border">
+                    <div class="vm-header mb-4">
+                        <div class="vm-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h3 class="fw-bold m-0" style="color: var(--navy-dark);">Misi Kami</h3>
+                    </div>
+                    <ul class="list-unstyled">
+                        <li class="d-flex mb-3">
+                            <i class="fas fa-check-circle text-primary mt-1 me-3"></i>
+                            <span>Menyediakan alamat bisnis legal dan prestisius dengan aksesibilitas harga yang revolusioner.</span>
+                        </li>
+                        <li class="d-flex mb-3">
+                            <i class="fas fa-check-circle text-primary mt-1 me-3"></i>
+                            <span>Membangun infrastruktur meeting room dan coworking space yang cerdas dan modern.</span>
+                        </li>
+                        <li class="d-flex mb-0">
+                            <i class="fas fa-check-circle text-primary mt-1 me-3"></i>
+                            <span>Membantu operasional UMKM melalui layanan administrasi dan logistik yang terintegrasi.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
 
 <section class="py-5 bg-light">
     <div class="container">
@@ -147,13 +143,15 @@
             <div class="col-md-4">
                 <div class="p-4 bg-white rounded-4 h-100 shadow-sm border-0">
                     <div class="feature-icon"><i class="bi bi-mailbox"></i></div>
-                    <h5 class="fw-bold">Business Support</h5>
+                    <h5 class="fw-bold">Co-working</h5>
                     <p class="text-muted small">Layanan resepsionis profesional untuk penyambutan tamu serta pengelolaan surat dan paket.</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+
 
 <section class="container py-5">
     <div class="row g-5 align-items-center">
@@ -202,16 +200,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
-
-<section class="container py-5 mb-5">
-    <div class="cta-box text-center text-white shadow-lg">
-        <h2 class="fw-bold mb-3">Siap Mengembangkan Bisnis Anda?</h2>
-        <p class="lead mb-4 opacity-75">Bergabunglah dengan BloomsVO dan nikmati kemudahan operasional kantor sekarang.</p>
-        <div class="d-flex justify-content-center gap-3">
-            <a href="{% url 'kontak' %}" class="btn btn-light btn-lg px-5 rounded-pill fw-bold shadow">Hubungi Kami</a>
         </div>
     </div>
 </section>

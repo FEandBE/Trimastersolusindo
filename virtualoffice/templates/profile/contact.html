@@ -46,13 +46,14 @@
                         <p class="text-muted small">support@bloomsvo.com</p>
                     </div>
                 </div>
-                 <hr class="my-4">
+                
+                <hr class="my-4">
                 <h6 class="fw-bold mb-3 mt-3">Maps</h6>
+                <div class="ratio ratio-4x3 rounded-3 overflow-hidden shadow-sm">
                     <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.273616682703!2d106.8080273!3d-6.2276081!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f150495f32b1%3A0x6b80f12f913d09a0!2sDistrict%208!5e0!3m2!1sid!2sid!4v1700000000000"
-                    allowfullscreen=""
-                    loading="lazy">
-                </iframe>
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.2577457492866!2d106.8066599110439!3d-6.229712993732646!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f15006099047%3A0xc66087d3e09968e4!2sDistrict%208!5e0!3m2!1sen!2sid!4v1700000000000"
+                        style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
            
                 <hr class="my-4">
 
@@ -67,6 +68,15 @@
 
         <div class="col-lg-8">
             <div class="bg-white p-4 p-md-5 rounded-4 shadow-sm border">
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert alert-{{ message.tags }} alert-dismissible fade show border-0 shadow-sm mb-4" role="alert">
+                            {{ message }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+
                 <h3 class="fw-bold mb-2">Kirim Pesan</h3>
                 <p class="text-muted mb-4">Isi formulir di bawah ini, tim kami akan menghubungi Anda dalam waktu maksimal 1x24 jam.</p>
 
@@ -87,10 +97,9 @@
                     <div class="col-md-6">
                         <label class="form-label fw-semibold small">Kebutuhan Layanan</label>
                         <select name="service" class="form-select form-control-lg bg-light border-0">
-                            <option value="vo">Virtual Office</option>
-                            <option value="coworking">Coworking Space</option>
-                            <option value="meeting">Meeting Room</option>
-
+                            <option value="Virtual Office">Virtual Office</option>
+                            <option value="Coworking Space">Coworking Space</option>
+                            <option value="Meeting Room">Meeting Room</option>
                         </select>
                     </div>
                     <div class="col-12">
@@ -105,12 +114,6 @@
                 </form>
             </div>
         </div>
-    </div>
-</section>
-
-<section class="container py-5">
-    <div class="map-wrapper mx-auto rounded-4 shadow-sm overflow-hidden">
-        
     </div>
 </section>
 
