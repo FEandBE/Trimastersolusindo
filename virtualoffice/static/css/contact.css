@@ -1,98 +1,148 @@
-:root {
-    /* Gradasi Spesifik Pilihanmu */
-    --primary-gradient: linear-gradient(145deg, #29326d, #476eb5);
-    --navy-dark: #29326d;
-    --blue-bright: #476eb5;
-    --soft-gray: #f8f9fa;
-}
-
-/* Hero Section dengan Gradasi Pilihan */
+/* ============================= */
+/* HERO SECTION */
+/* ============================= */
 .contact-hero {
-    background: var(--primary-gradient);
-    padding: 100px 0;
-    border-radius: 0 0 40px 40px;
-    margin-bottom: -50px; /* Menarik konten bawah naik ke atas */
+    min-height: 55vh;
+    background: linear-gradient(145deg, #29326d, #476eb5);
     position: relative;
-    z-index: 1;
+    overflow: hidden;
 }
 
-/* Sidebar Info Card */
+.contact-hero::after {
+    content: "";
+    position: absolute;
+    bottom: -80px;
+    right: -80px;
+    width: 300px;
+    height: 300px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 50%;
+}
+
+.contact-hero h1 {
+    letter-spacing: 1px;
+}
+
+.contact-hero p {
+    opacity: 0.9;
+}
+
+
+/* ============================= */
+/* SIDEBAR INFO */
+/* ============================= */
 .contact-info-sidebar {
-    background: #ffffff;
-    border: 1px solid rgba(41, 50, 109, 0.1);
-    position: sticky;
-    top: 100px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.04);
 }
 
-/* Icon Box menggunakan warna Navy kamu */
-.icon-box {
-    width: 48px;
-    height: 48px;
-    background: rgba(41, 50, 109, 0.08); /* Navy transparan */
-    color: var(--navy-dark);
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.3rem;
-    flex-shrink: 0;
-    border: 1px solid rgba(41, 50, 109, 0.1);
+.contact-info-sidebar:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
 }
 
 .info-card {
     display: flex;
     align-items: flex-start;
     gap: 15px;
-    padding: 10px 0;
 }
 
-/* Form Styling */
-.form-label {
-    color: var(--navy-dark);
+.icon-box {
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(145deg, #29326d, #476eb5);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    font-size: 18px;
+    flex-shrink: 0;
 }
 
-.form-control:focus, .form-select:focus {
-    background-color: #fff !important;
-    border-color: var(--blue-bright) !important;
-    box-shadow: 0 0 0 0.25rem rgba(71, 110, 181, 0.15);
+
+/* ============================= */
+/* FORM SECTION */
+/* ============================= */
+form .form-control,
+form .form-select {
+    border-radius: 12px;
+    padding: 14px 18px;
+    transition: all 0.3s ease;
 }
 
-/* Tombol Submit dengan Gradasi Pilihan */
+form .form-control:focus,
+form .form-select:focus {
+    box-shadow: 0 0 0 3px rgba(71,110,181,0.2);
+    background: #fff;
+}
+
+form textarea {
+    border-radius: 16px;
+}
+
+/* Button Custom */
 .btn-primary {
-    background: var(--primary-gradient) !important;
-    border: none !important;
+    background: linear-gradient(145deg, #29326d, #476eb5);
+    border: none;
     transition: all 0.3s ease;
 }
 
 .btn-primary:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(41, 50, 109, 0.25) !important;
+    box-shadow: 0 10px 25px rgba(41,50,109,0.4);
 }
 
-/* Link Sosial Media */
+
+/* ============================= */
+/* SOCIAL BUTTON */
+/* ============================= */
 .btn-outline-primary {
-    color: var(--navy-dark);
-    border-color: var(--navy-dark);
+    border-color: #29326d;
+    color: #29326d;
 }
 
 .btn-outline-primary:hover {
-    background: var(--primary-gradient);
+    background: linear-gradient(145deg, #29326d, #476eb5);
     border-color: transparent;
+    color: white;
 }
 
-/* Map Styling */
-.ratio-21x9 {
-    filter: grayscale(10%) contrast(1.1);
-    border-top: 5px solid var(--navy-dark);
+
+/* ============================= */
+/* MAP SECTION */
+/* ============================= */
+.ratio iframe {
+    filter: grayscale(30%) contrast(105%);
+    transition: all 0.3s ease;
 }
 
-@media (max-width: 991px) {
+.ratio iframe:hover {
+    filter: grayscale(0%) contrast(100%);
+}
+
+
+/* ============================= */
+/* RESPONSIVE */
+/* ============================= */
+@media (max-width: 992px) {
     .contact-hero {
-        padding: 60px 0 100px 0;
-        margin-bottom: -30px;
+        min-height: 40vh;
+        text-align: center;
+        padding: 60px 0;
     }
+}
+
+@media (max-width: 576px) {
     .contact-info-sidebar {
-        position: static;
-        margin-bottom: 30px;
+        padding: 25px;
+    }
+
+    .contact-hero h1 {
+        font-size: 28px;
+    }
+
+    .contact-hero p {
+        font-size: 14px;
     }
 }

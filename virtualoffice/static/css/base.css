@@ -1,6 +1,18 @@
 body {
     background-color: #fcfcfd; /* Putih tulang/abu sangat muda agar card putih terlihat kontras */
 }
+.brand {
+    font-weight: 700;
+    font-size: 20px;
+    text-decoration: none;
+    color: #29326d;
+    gap: 10px;
+}
+
+.brand-logo {
+    width: 35px;   /* bisa ubah 28–40px sesuai selera */
+    height: auto;
+}
 /* NAVBAR CUSTOM */
 .navbar-custom {
     background: rgba(255,255,255,0.9);
@@ -503,13 +515,11 @@ body {
     color: #ffffff;
     transform: translateY(-5px);
     background: linear-gradient(145deg, #29326d, #476eb5);
-    /* Efek Menyala Saat Hover */
     box-shadow: 0 10px 20px rgba(71, 110, 181, 0.4);
 }
 
 .social-icon:active {
     transform: translateY(2px);
-    /* Efek Tertekan ke Dalam */
     box-shadow: 
         inset 3px 3px 7px rgba(0, 0, 0, 0.6), 
         inset -2px -2px 5px rgba(255, 255, 255, 0.05);

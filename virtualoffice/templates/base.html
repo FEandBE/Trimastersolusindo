@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>{% block title %}BloomsVO - Virtual Office Premium{% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <link rel="icon" type="image/x-icon" href="{% static 'img/logo2.ico' %}">
     <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
@@ -30,7 +30,10 @@
     <div class="container nav-wrapper">
 
         <!-- Logo -->
-        <a href="{% url 'home' %}" class="brand">BloomsVO</a>
+       <a href="{% url 'home' %}" class="brand d-flex align-items-center">
+    <img src="{% static 'img/logo.png' %}" alt="BloomsVO Logo" class="brand-logo">
+    <span>BloomsVO</span>
+</a>
 
         <!-- Burger -->
         <div class="burger" onclick="toggleMenu()">
@@ -234,9 +237,9 @@
             <div class="col-md-4">
                 <h5 class="footer-title">Kontak Kami</h5>
                 <ul class="list-unstyled">
-                    <li class="mb-3"><i class="fas fa-map-marker-alt me-2 text-accent"></i> Jl. Contoh No.123, Jakarta Selatan</li>
-                    <li class="mb-3"><i class="fas fa-envelope me-2 text-accent"></i> <a href="mailto:info@bloomsvo.com" class="footer-link">info@bloomsvo.com</a></li>
-                    <li class="mb-3"><i class="fab fa-whatsapp me-2 text-accent"></i> <a href="https://wa.me/628XXXXXXXXXX" target="_blank" class="footer-link">+62 8XX XXXX XXXX</a></li>
+                    <li class="mb-3"><i class="fas fa-map-marker-alt me-2 text-accent"></i> Jalan </li>
+                    <li class="mb-3"><i class="fas fa-envelope me-2 text-accent"></i> <a href="mailto:info@bloomsvo.com" class="footer-link">BloomsVO@gmail.com</a></li>
+                    <li class="mb-3"><i class="fab fa-whatsapp me-2 text-accent"></i> <a href="https://wa.me/628976632702" target="_blank" class="footer-link">+62 8XX XXXX XXXX</a></li>
                 </ul>
             </div>
 
@@ -260,7 +263,7 @@
         </div>
     </div>
 </footer>
-<a href="https://wa.me/628XXXXXXXXXX" class="floating-wa" target="_blank" rel="noopener noreferrer">
+<a href="https://wa.me/628976632702" class="floating-wa" target="_blank" rel="noopener noreferrer">
     <div class="wa-text-pop">Tanya Kami Sekarang!</div>
     <i class="fab fa-whatsapp"></i>
 </a>

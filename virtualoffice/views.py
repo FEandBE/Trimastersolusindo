@@ -9,7 +9,7 @@ def home(request):
     coworking_list = Coworking.objects.filter(aktif=True)
     ruang_list = RuangRapat.objects.filter(aktif=True)
 
-    return render(request, 'home.html', {
+    return render(request, 'profile/home.html', {
         'paket_list': paket_list,
         'coworking_list': coworking_list,
         'ruang_list': ruang_list
@@ -17,7 +17,7 @@ def home(request):
 
 def coworking_list(request):
     coworking_list = Coworking.objects.filter(aktif=True)
-    return render(request, 'coworking.html', {'coworking_list': coworking_list})
+    return render(request, 'product_list/coworking.html', {'coworking_list': coworking_list})
 
 
 def coworking_detail(request, slug):
@@ -25,7 +25,7 @@ def coworking_detail(request, slug):
     # Ambil 3 ruangan lain untuk rekomendasi di bawah
     spaces_lainnya = Coworking.objects.filter(aktif=True).exclude(id=space.id)[:3]
     
-    return render(request, 'coworking_detail.html', {
+    return render(request, 'product_detail/coworking_detail.html', {
         'space': space,
         'spaces_lainnya': spaces_lainnya
     })
@@ -33,13 +33,13 @@ def coworking_detail(request, slug):
 
 def ruang_rapat(request):
     rooms = RuangRapat.objects.filter(aktif=True)
-    return render(request, 'meeting_rooms.html', {'rooms': rooms})
+    return render(request, 'product_list/meeting_rooms.html', {'rooms': rooms})
 
 def ruang_rapat_detail(request, slug):
     room = get_object_or_404(RuangRapat, slug=slug, aktif=True)
     ruang_lainnya = RuangRapat.objects.filter(aktif=True).exclude(slug=slug)
 
-    return render(request, 'meeting_room_detail.html', {
+    return render(request, 'product_detail/meeting_room_detail.html', {
         'room': room,
         'ruang_lainnya': ruang_lainnya
     })
@@ -50,16 +50,16 @@ def testimonial(request):
 
 
 def kontak(request):
-    return render(request, 'contact.html')
+    return render(request, 'profile/contact.html')
 
 def tentang(request):
-    return render(request, 'about.html')
+    return render(request, 'profile/about.html')
 
 def detail_paket(request, slug):
     paket = get_object_or_404(Paket, slug=slug, aktif=True)
     paket_lainnya = Paket.objects.filter(aktif=True)
 
-    return render(request, 'package_detail.html', {
+    return render(request, 'product_detail/package_detail.html', {
         'paket': paket,
         'paket_lainnya': paket_lainnya
     })
@@ -67,7 +67,7 @@ def detail_paket(request, slug):
 
 def daftar_paket(request):
     paket_list = Paket.objects.filter(aktif=True)
-    return render(request, 'package_list.html', {'paket_list': paket_list})
+    return render(request, 'product_list/package_list.html', {'paket_list': paket_list})
 
 
 def ajax_order(request):
