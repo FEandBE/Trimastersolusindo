@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Ruang Rapat - BloomsVO{% endblock %}
+
+{% block extra_css %}
+<link href="{% static 'css/room_meeting.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+
+<section class="hero-minimalist">
+    <div class="container-fluid p-0">
+        <div class="row g-0 min-vh-100">
+            <div class="col-lg-6 d-flex align-items-center bg-white p-5 p-lg-custom">
+                <div data-aos="fade-up">
+                    <div class="tagline mb-4">
+                        <span class="navy-dot"></span>
+                        <span class="text-uppercase tracking-widest fw-semibold small text-muted">Professional Meeting Spaces</span>
+                    </div>
+                    
+                    <h1 class="display-2 fw-black navy-blue-text mb-4">
+                        Impress Your <br>
+                        <span class="text-gradient-navy">Clients Today.</span>
+                    </h1>
+                    
+                    <p class="lead text-muted mb-5 pe-lg-5">
+                        Ruang rapat premium dengan fasilitas lengkap di lokasi strategis. Sempurna untuk kolaborasi tim, presentasi bisnis, hingga penandatanganan kontrak.
+                    </p>
+                    
+                    <div class="cta-wrapper">
+                        <a href="#produk" class="btn btn-navy-pill px-4 py-3">
+                            Lihat Semua Ruangan <i class="fas fa-chevron-down ms-2"></i>
+                        </a>
+                        
+                        <div class="trust-badge mt-5 d-flex align-items-center">
+                            <div class="d-flex align-items-center gap-3">
+                                <div class="icon-circle bg-light">
+                                    <i class="fas fa-shield-alt text-primary"></i>
+                                </div>
+                                <div>
+                                    <p class="small fw-bold mb-0">Privasi Terjamin</p>
+                                    <p class="small text-muted mb-0">Ruangan kedap suara & aman.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 d-none d-lg-block position-relative overflow-hidden">
+                <div class="hero-image-main shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1431540015161-0bf868a2d407?auto=format&fit=crop&w=1000&q=80" alt="Premium Meeting Room">
+                </div>
+                
+                <div class="floating-card shadow-lg p-4 bg-white rounded-4" style="bottom: 120px;">
+                    <div class="d-flex align-items-center mb-2">
+                        <div class="icon-box-small me-3">
+                            <i class="fas fa-tv text-primary"></i>
+                        </div>
+                        <h6 class="mb-0 fw-bold">Full Tech Support</h6>
+                    </div>
+                    <p class="small text-muted mb-0">Smart TV, High-speed Wi-Fi, and Projectors ready to use.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="produk" class="container py-5 mt-5">
+    <div class="text-center mb-5">
+        <h2 class="fw-bold navy-blue-text">Meeting Rooms Profesional</h2>
+        <p class="text-muted">Pilih ruang rapat nyaman untuk meeting, presentasi, dan diskusi bisnis Anda</p>
+    </div>
+        <div class="row g-4">
+            {% for room in rooms %}
+                <div class="col-md-4 d-flex">
+                    {% include 'includes/card_produk.html' with item=room type='meeting' %}
+                </div>
+            {% empty %}
+                <div class="col-12 text-center">
+                    <p class="text-muted">Belum ada paket tersedia</p>
+                </div>
+            {% endfor %}
+        </div>
+</section>
+{% endblock %}

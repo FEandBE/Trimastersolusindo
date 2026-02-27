@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Explore Our Coworking Space{% endblock %}
+
+{% block extra_css %}
+<link href="{% static 'css/coworking.css' %}" rel="stylesheet">
+<link href="{% static 'css/card_produk.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<section class="hero-premium">
+    <div class="hero-overlay"></div>
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-lg-8 text-white" data-aos="fade-right">
+                <span class="badge-premium mb-3">
+                    <i class="fas fa-star me-2"></i> Ruang Kerja Eksklusif di Jakarta
+                </span>
+                <h1 class="display-3 fw-bold mb-4 mt-2">
+                    Definisikan Kembali <br>
+                    <span class="text-gradient">Cara Anda Bekerja.</span>
+                </h1>
+                <p class="lead mb-5 opacity-75 pe-lg-5">
+                    Nikmati fasilitas kelas dunia dengan lingkungan profesional yang dirancang khusus untuk meningkatkan produktivitas dan memperluas jaringan bisnis Anda.
+                </p>
+                <div class="d-flex gap-3 flex-wrap">
+                    <a href="#produk" class="btn btn-premium-lg text-white">
+                        Lihat Pilihan Ruang <i class="fas fa-chevron-right ms-2"></i>
+                    </a>
+                    <a href="https://wa.me/628976632702" class="btn btn-outline-light-lg">
+                        Konsultasi Gratis
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="hero-stats-container d-none d-md-flex">
+        <div class="stat-item text-white">
+            <h4 class="fw-bold mb-0">50+</h4>
+            <span>Private Offices</span>
+        </div>
+        <div class="stat-item border-start border-end border-opacity-25 border-white text-white">
+            <h4 class="fw-bold mb-0">10GBps</h4>
+            <span>Fiber Optic</span>
+        </div>
+        <div class="stat-item text-white">
+            <h4 class="fw-bold mb-0">24/7</h4>
+            <span>Security Access</span>
+        </div>
+    </div>
+</section>
+
+<div id="produk" class="container mt-5 py-5">
+    <div class="row mb-5 text-center">
+        <div class="col-12">
+            <h2 class="fw-bold navy-blue-text">Pilihan Paket Coworking</h2>
+            <p class="text-muted">Temukan ruang kerja yang sesuai dengan ritme kerja Anda</p>
+        </div>
+    </div>
+
+    <div class="row g-4 mb-5">
+        {% for item in coworking_list %}
+        <div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up">
+            {% include 'includes/card_produk.html' with item=item type='coworking' %}
+        </div>
+        {% empty %}
+        <div class="col-12 text-center py-5">
+            <p class="text-muted">Maaf, saat ini belum ada paket yang tersedia.</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+    });
+</script>
+{% endblock %}

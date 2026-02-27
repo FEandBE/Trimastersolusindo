@@ -1,0 +1,72 @@
+{% load static %}
+{% block extra_css %}
+<link href="{% static 'css/card_produk.css' %}" rel="stylesheet">
+{% endblock %}
+<div class="price-card">
+    {% if item.gambar %}
+        <img src="{{ item.gambar.url }}" class="paket-image" alt="{{ item.nama }}">
+    {% else %}
+        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=600&q=80" class="paket-image" alt="Default Image">
+    {% endif %}
+
+    <div class="card-body">
+        <div class="content-top">
+            <h5 class="paket-nama">{{ item.nama }}</h5>
+            
+            {% if type == 'meeting' %}
+                <span class="badge bg-light text-primary mb-2"><i class="fas fa-users"></i> {{ item.kapasitas }} Orang</span>
+            {% elif type == 'coworking' %}
+                <span class="badge bg-light text-success mb-2"><i class="fas fa-tag"></i> {{ item.get_tipe_display }}</span>
+            {% endif %}
+
+            <p class="paket-deskripsi">{{ item.deskripsi|truncatewords:20 }}</p>
+        </div>
+
+        <div class="content-bottom">
+            <h4 class="harga-tag">
+                {% if type == 'meeting' %}
+                    Rp {{ item.harga_per_jam }}/Jam
+                {% elif type == 'coworking' %}
+                    Rp {{ item.harga }}/{% if item.tipe == 'harian' %}Hari{% else %}Bln{% endif %}
+                {% else %}
+                    Rp {{ item.harga }}/Bln
+                {% endif %}
+            </h4>
+             <h5 class="paket-nama">Yang A</h5>
+            <ul class="fitur-list">
+                {% if type == 'paket' %}
+                    {% if item.alamat_bisnis %}<li>Alamat Bisnis</li>{% endif %}
+                    {% if item.pengelolaan_surat %}<li>Pengelolaan Surat</li>{% endif %}
+                    {% if item.jam_meeting > 0 %}<li>{{ item.jam_meeting }} Jam Meeting</li>{% endif %}
+                    {% if item.telepon_khusus %}<li> Nomor Telepon Khusus & Layanan Resepsionis</li>{% endif %}
+                    {% if paket.layanan_prioritas %}<li> Akses Lounge & Layanan Prioritas</li>{% endif %}
+                       
+                {% elif type == 'meeting' %}
+                    <li>WiFi & Projector</li>
+                    <li>Layanan Resepsionis</li>
+                    <li>Air Mineral & Kopi</li>
+                {% else %}
+                    <li>High Speed Internet</li>
+                    <li>Free Flow Drinks</li>
+                    <li>Akses Area Komunal</li>
+                {% endif %}
+            </ul>
+
+            <div class="button-wrapper mt-3">
+                {% if type == 'paket' %}
+                    <a href="{% url 'detail_paket' item.slug %}" class="btn btn-outline-dark btn-sm w-100 mb-2">Detail</a>
+                {% elif type == 'meeting' %}
+                    <a href="{% url 'meeting_room_detail' item.slug %}" class="btn btn-outline-dark btn-sm w-100 mb-2">Detail</a>
+                {% elif type == 'coworking' %}
+                    <a href="{% url 'coworking_detail' item.slug %}" class="btn btn-outline-dark btn-sm w-100 mb-2">Detail</a>
+                {% endif %}
+                
+                <button class="btn btn-navy-gradient open-order w-100 py-2"
+                        data-type="{{ type }}"
+                        data-id="{{ item.id }}">
+                    Pesan Sekarang
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

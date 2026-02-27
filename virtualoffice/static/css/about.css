@@ -1,0 +1,73 @@
+:root {
+    --primary-gradient: linear-gradient(145deg, #29326d, #476eb5);
+    --navy-dark: #29326d;
+    --blue-bright: #476eb5;
+}
+
+/* Hero lebih pendek & elegan */
+.about-hero {
+    background: var(--primary-gradient);
+    padding: 120px 0 80px 0;
+    border-radius: 0 0 40px 40px;
+    position: relative;
+}
+
+/* Kartu Visi Misi yang menyatu */
+.vision-card {
+    background: #fff;
+    border-left: 5px solid var(--navy-dark);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+/* Value Card tanpa angka, fokus ke teks */
+.value-card {
+    border: 1px solid #eee;
+    padding: 30px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    background: #fff;
+    height: 100%;
+}
+
+.value-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--blue-bright);
+    box-shadow: 0 15px 30px rgba(41, 50, 109, 0.1);
+}
+
+.value-icon i {
+    font-size: 2.5rem;
+    color: var(--navy-dark);
+}
+
+/* Team Card Simple */
+.team-img-wrapper {
+    border-radius: 20px;
+    overflow: hidden;
+    height: 300px;
+    margin-bottom: 15px;
+}
+
+.team-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* CTA dengan gradasi kamu */
+.cta-about {
+    background: var(--primary-gradient);
+    border-radius: 30px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    background: #fdfdfd;
+    border: 1px solid #f0f0f0;
+}

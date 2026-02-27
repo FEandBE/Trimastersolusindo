@@ -1,0 +1,157 @@
+/* --- 1. SETTINGS --- */
+:root {
+    --navy-deep: #29326d;
+    --navy-royal: #476eb5;
+    --navy-gradient: linear-gradient(180deg, #29326d 0%, #476eb5 100%);
+    --bg-light: #fcfcfd; 
+    --text-muted: #6c757d;
+    --text-dark: #2d3748;
+    --white: #ffffff;
+    --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    --shadow-hover: 0 30px 60px rgba(41, 50, 109, 0.15);
+}
+
+/* --- 2. HERO --- */
+.hero-minimalist { background-color: var(--white); overflow: hidden; position: relative; }
+.p-lg-custom { padding-left: 8% !important; padding-right: 5% !important; }
+.fw-black { font-weight: 900; letter-spacing: -1.5px; }
+.navy-blue-text { color: var(--navy-deep); }
+.text-gradient-navy {
+    background: var(--navy-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+.tagline { display: flex; align-items: center; gap: 12px; }
+.navy-dot { width: 10px; height: 10px; background: var(--navy-gradient); border-radius: 50%; }
+.hero-image-main img { height: 100vh; width: 100%; object-fit: cover; }
+.floating-card { position: absolute; bottom: 80px; right: 50px; width: 320px; z-index: 10; border-left: 6px solid var(--navy-deep); background: rgba(255, 255, 255, 0.9) !important; border-radius: 15px; }
+
+/* --- 3. PRICE CARDS (CORE LOGIC) --- */
+.price-card {
+    background: var(--white);
+    border-radius: 24px;
+    border: 1px solid rgba(41, 50, 109, 0.08);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column; /* Susun vertikal: Foto -> Body */
+    width: 100%;
+    overflow: hidden;
+}
+
+.price-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--navy-royal);
+}
+
+.paket-image {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* KUNCI KESEJAJARAN DI SINI */
+.price-card .card-body {
+    padding: 2rem !important;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Paksa body memenuhi sisa tinggi card */
+}
+
+.content-top {
+    flex-grow: 1; /* Paksa area deskripsi mengambil ruang sisa */
+    margin-bottom: 20px;
+}
+
+.paket-nama { font-weight: 800; color: var(--navy-deep); margin-bottom: 10px; }
+.paket-deskripsi { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; }
+
+.content-bottom {
+    margin-top: auto; /* Dorong semua konten ini ke dasar card */
+    padding-top: 15px;
+    border-top: 1px solid #f1f3f7;
+}
+
+.harga-tag {
+    color: var(--navy-deep);
+    font-weight: 900;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+/* LIST FITUR */
+.fitur-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+    min-height: 120px; /* Opsional: biar checklistnya juga sejajar kalau mau */
+}
+
+.fitur-list li {
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    color: var(--text-dark);
+}
+
+.fitur-list li::before {
+    content: "\f058";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    color: var(--navy-royal);
+    margin-right: 10px;
+}
+
+/* BUTTONS */
+.btn-navy-gradient {
+    background: var(--navy-gradient);
+    color: white !important;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.btn-navy-gradient:hover { filter: brightness(1.2); transform: scale(1.02); }
+
+.btn-outline-dark {
+    border-radius: 12px;
+    border: 1px solid var(--navy-deep);
+    color: var(--navy-deep);
+}
+
+.avatar-group .avatar { width: 35px; height: 35px; border-radius: 50%; border: 2px solid white; margin-left: -10px; }
+
+@media (max-width: 991px) {
+    .hero-image-main img { height: 40vh; }
+    .p-lg-custom { padding: 40px 20px !important; }
+}
+
+/* Styling tambahan untuk Hero Meeting Room */
+.icon-circle {
+    width: 45px;
+    height: 45px;
+    background: #f0f4f8;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.icon-box-small {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(71, 110, 181, 0.1);
+    border-radius: 8px;
+}
+
+/* Memastikan transisi smooth saat scroll ke id #produk */
+html {
+    scroll-behavior: smooth;
+}

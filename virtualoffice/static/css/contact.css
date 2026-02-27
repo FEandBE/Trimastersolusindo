@@ -1,0 +1,98 @@
+:root {
+    /* Gradasi Spesifik Pilihanmu */
+    --primary-gradient: linear-gradient(145deg, #29326d, #476eb5);
+    --navy-dark: #29326d;
+    --blue-bright: #476eb5;
+    --soft-gray: #f8f9fa;
+}
+
+/* Hero Section dengan Gradasi Pilihan */
+.contact-hero {
+    background: var(--primary-gradient);
+    padding: 100px 0;
+    border-radius: 0 0 40px 40px;
+    margin-bottom: -50px; /* Menarik konten bawah naik ke atas */
+    position: relative;
+    z-index: 1;
+}
+
+/* Sidebar Info Card */
+.contact-info-sidebar {
+    background: #ffffff;
+    border: 1px solid rgba(41, 50, 109, 0.1);
+    position: sticky;
+    top: 100px;
+}
+
+/* Icon Box menggunakan warna Navy kamu */
+.icon-box {
+    width: 48px;
+    height: 48px;
+    background: rgba(41, 50, 109, 0.08); /* Navy transparan */
+    color: var(--navy-dark);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    flex-shrink: 0;
+    border: 1px solid rgba(41, 50, 109, 0.1);
+}
+
+.info-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 10px 0;
+}
+
+/* Form Styling */
+.form-label {
+    color: var(--navy-dark);
+}
+
+.form-control:focus, .form-select:focus {
+    background-color: #fff !important;
+    border-color: var(--blue-bright) !important;
+    box-shadow: 0 0 0 0.25rem rgba(71, 110, 181, 0.15);
+}
+
+/* Tombol Submit dengan Gradasi Pilihan */
+.btn-primary {
+    background: var(--primary-gradient) !important;
+    border: none !important;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(41, 50, 109, 0.25) !important;
+}
+
+/* Link Sosial Media */
+.btn-outline-primary {
+    color: var(--navy-dark);
+    border-color: var(--navy-dark);
+}
+
+.btn-outline-primary:hover {
+    background: var(--primary-gradient);
+    border-color: transparent;
+}
+
+/* Map Styling */
+.ratio-21x9 {
+    filter: grayscale(10%) contrast(1.1);
+    border-top: 5px solid var(--navy-dark);
+}
+
+@media (max-width: 991px) {
+    .contact-hero {
+        padding: 60px 0 100px 0;
+        margin-bottom: -30px;
+    }
+    .contact-info-sidebar {
+        position: static;
+        margin-bottom: 30px;
+    }
+}

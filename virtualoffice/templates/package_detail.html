@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{ paket.nama }} - BloomsVO{% endblock %}
+
+{% block extra_css %}
+<link href="{% static 'css/package_detail.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<section class="container mt-5 pt-lg-5">
+    <div class="row g-lg-5">
+        <div class="col-md-6 mb-4 mb-md-0">
+            <div class="product-sticky-container">
+                <nav aria-label="breadcrumb" class="mb-4">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Home</a></li>
+                        <li class="breadcrumb-item"><a href="{% url 'daftar_paket' %}">Paket</a></li>
+                        <li class="breadcrumb-item active">{{ paket.nama }}</li>
+                    </ol>
+                </nav>
+                
+                <div class="image-wrapper">
+                    {% if paket.gambar %}
+                        <img src="{{ paket.gambar.url }}" class="img-fluid rounded-4 shadow-lg product-main-img" alt="{{ paket.nama }}">
+                    {% else %}
+                        <img src="{% static 'img/default-package.jpg' %}" class="img-fluid rounded-4 shadow-lg product-main-img" alt="Default Image">
+                    {% endif %}
+                    
+                    <div class="floating-trust-badge">
+                        <i class="fas fa-shield-alt me-2"></i> Verified Office
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 ps-lg-5">
+            <div class="product-info-card">
+               
+                <h1 class="display-4 fw-bold navy-blue-text mb-3">{{ paket.nama }}</h1>
+                
+                <div class="price-tag mb-4">
+                    <span class="currency">Rp</span>
+                    <span class="amount">{{ paket.harga }}</span>
+                    <span class="period">/ Bulan</span>
+                </div>
+
+                <div class="description-box mb-5">
+                    <h5 class="fw-bold navy-blue-text">Deskripsi Paket</h5>
+                    <p class="text-muted lead">
+                        {{ paket.deskripsi|default:"Nikmati layanan Virtual Office profesional di lokasi prestisius Jakarta dengan fasilitas lengkap untuk mendukung pertumbuhan bisnis Anda." }}
+                    </p>
+                </div>
+
+                <div class="benefits-box mb-5">
+                    <h5 class="fw-bold navy-blue-text mb-3">Apa yang Anda Dapatkan:</h5>
+                    <ul class="benefit-list">
+                        {% if paket.pengelolaan_surat %}
+                            <li><i class="fas fa-check-circle"></i> Alamat Bisnis Bergengsi & Pengelolaan Surat</li>
+                        {% endif %}
+                        {% if paket.jam_meeting %}
+                            <li><i class="fas fa-check-circle"></i> {{ paket.jam_meeting }} Jam Penggunaan Meeting Room/Bulan</li>
+                        {% endif %}
+                        {% if paket.telepon_khusus %}
+                            <li><i class="fas fa-check-circle"></i> Nomor Telepon Khusus & Layanan Resepsionis</li>
+                        {% endif %}
+                        {% if paket.layanan_prioritas %}
+                            <li><i class="fas fa-check-circle"></i> Akses Lounge & Layanan Prioritas</li>
+                        {% endif %}
+                       
+                    </ul>
+                </div>
+
+                <div class="action-area d-grid gap-3 d-md-flex align-items-center">
+                    <button class="btn btn-navy-gradient open-order py-3 px-5 flex-grow-1"
+                            data-type="paket"
+                            data-id="{{ paket.id }}">
+                        Pesan Sekarang <i class="fas fa-arrow-right ms-2"></i>
+                    </button>
+                    <a href="https://wa.me/628XXXXXXXXXX" class="btn btn-outline-navy py-3 px-4">
+                        <i class="fab fa-whatsapp fs-5"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-divider my-5"></div>
+
+    <div class="related-products pb-5">
+        <div class="d-flex justify-content-between align-items-end mb-4">
+            <div>
+                <h3 class="fw-bold navy-blue-text">Paket Lainnya</h3>
+                <p class="text-muted mb-0">Cek pilihan paket lain yang sesuai dengan kebutuhan Anda.</p>
+            </div>
+            <a href="{% url 'daftar_paket' %}" class="text-decoration-none fw-bold navy-blue-text">Lihat Semua <i class="fas fa-chevron-right ms-1"></i></a>
+        </div>
+
+        <div class="row">
+            {% for item in paket_lainnya %}
+                {% if item.id != paket.id %}
+                <div class="col-md-4 mb-4">
+                    <div class="card other-package-card shadow-sm h-100">
+                        <div class="card-body p-4">
+                            <span class="small text-muted text-uppercase fw-bold">Plan</span>
+                            <h5 class="fw-bold mt-1 mb-3">{{ item.nama }}</h5>
+                            <h4 class="text-navy-royal fw-bold mb-4">Rp {{ item.harga }}</h4>
+                            <a href="{% url 'detail_paket' item.slug %}" class="btn btn-sm btn-outline-navy w-100 py-2">
+                                Lihat Detail
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+            {% empty %}
+                <p class="text-muted">Tidak ada paket lainnya.</p>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

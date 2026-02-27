@@ -1,0 +1,38 @@
+/* --- 1. SETTINGS --- */
+:root {
+    --navy-deep: #29326d;
+    --navy-royal: #476eb5;
+    --navy-gradient: linear-gradient(180deg, #29326d 0%, #476eb5 100%);
+    --bg-light: #fcfcfd; 
+    --text-muted: #6c757d;
+    --text-dark: #2d3748;
+    --white: #ffffff;
+    --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    --shadow-hover: 0 30px 60px rgba(41, 50, 109, 0.15);
+}
+
+/* --- 2. HERO --- */
+.hero-minimalist { background-color: var(--white); overflow: hidden; position: relative; }
+.p-lg-custom { padding-left: 8% !important; padding-right: 5% !important; }
+.fw-black { font-weight: 900; letter-spacing: -1.5px; }
+.navy-blue-text { color: var(--navy-deep); }
+.text-gradient-navy {
+    background: var(--navy-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+.tagline { display: flex; align-items: center; gap: 12px; }
+.navy-dot { width: 10px; height: 10px; background: var(--navy-gradient); border-radius: 50%; }
+.hero-image-main img { height: 100vh; width: 100%; object-fit: cover; }
+.floating-card { position: absolute; bottom: 80px; right: 50px; width: 320px; z-index: 10; border-left: 6px solid var(--navy-deep); background: rgba(255, 255, 255, 0.9) !important; border-radius: 15px; }
+
+/* --- 3. PRICE CARDS (CORE LOGIC) --- */
+
+
+.avatar-group .avatar { width: 35px; height: 35px; border-radius: 50%; border: 2px solid white; margin-left: -10px; }
+
+@media (max-width: 991px) {
+    .hero-image-main img { height: 40vh; }
+    .p-lg-custom { padding: 40px 20px !important; }
+}

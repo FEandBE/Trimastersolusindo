@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Kontak Kami - BloomsVO{% endblock %}
+
+{% block extra_css %}
+<link href="{% static 'css/contact.css' %}" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+{% endblock %}
+
+{% block content %}
+
+<section class="contact-hero d-flex align-items-center">
+    <div class="container text-center text-white">
+        <h1 class="display-4 fw-bold">Hubungi Kami</h1>
+        <p class="lead">Punya pertanyaan seputar Virtual Office atau Coworking? Kami siap membantu.</p>
+    </div>
+</section>
+
+<section class="container py-5">
+    <div class="row g-5">
+        <div class="col-lg-4">
+            <div class="contact-info-sidebar p-4 rounded-4 shadow-sm bg-white">
+                <h3 class="fw-bold mb-4">Informasi Kontak</h3>
+                
+                <div class="info-card mb-4">
+                    <div class="icon-box"><i class="bi bi-geo-alt"></i></div>
+                    <div>
+                        <h6 class="fw-bold mb-1">Kantor Pusat</h6>
+                        <p class="text-muted small">District 8, SCBD Lot 28, Jakarta Selatan, 12190</p>
+                    </div>
+                </div>
+
+                <div class="info-card mb-4">
+                    <div class="icon-box"><i class="bi bi-whatsapp"></i></div>
+                    <div>
+                        <h6 class="fw-bold mb-1">WhatsApp CS</h6>
+                        <p class="text-muted small">+62 812 3456 7890</p>
+                    </div>
+                </div>
+
+                <div class="info-card mb-4">
+                    <div class="icon-box"><i class="bi bi-envelope"></i></div>
+                    <div>
+                        <h6 class="fw-bold mb-1">Email Support</h6>
+                        <p class="text-muted small">support@bloomsvo.com</p>
+                    </div>
+                </div>
+
+                <hr class="my-4">
+
+                <h6 class="fw-bold mb-3">Ikuti Kami</h6>
+                <div class="d-flex gap-2">
+                    <a href="#" class="btn btn-outline-primary btn-sm rounded-circle"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="btn btn-outline-primary btn-sm rounded-circle"><i class="bi bi-linkedin"></i></a>
+                    <a href="#" class="btn btn-outline-primary btn-sm rounded-circle"><i class="bi bi-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-8">
+            <div class="bg-white p-4 p-md-5 rounded-4 shadow-sm border">
+                <h3 class="fw-bold mb-2">Kirim Pesan</h3>
+                <p class="text-muted mb-4">Isi formulir di bawah ini, tim kami akan menghubungi Anda dalam waktu maksimal 1x24 jam.</p>
+
+                <form method="POST" action="{% url 'kontak' %}" class="row g-3">
+                    {% csrf_token %}
+                    <div class="col-md-6">
+                        <label class="form-label fw-semibold small">Nama Lengkap</label>
+                        <input type="text" name="name" class="form-control form-control-lg bg-light border-0" placeholder="Contoh: Budi Santoso" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label fw-semibold small">Alamat Email</label>
+                        <input type="email" name="email" class="form-control form-control-lg bg-light border-0" placeholder="budi@email.com" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label fw-semibold small">Nomor Telepon/WA</label>
+                        <input type="tel" name="phone" class="form-control form-control-lg bg-light border-0" placeholder="0812xxxx" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label fw-semibold small">Kebutuhan Layanan</label>
+                        <select name="service" class="form-select form-control-lg bg-light border-0">
+                            <option value="vo">Virtual Office</option>
+                            <option value="coworking">Coworking Space</option>
+                            <option value="meeting">Meeting Room</option>
+                            <option value="legal">Legalitas Bisnis</option>
+                        </select>
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label fw-semibold small">Pesan Anda</label>
+                        <textarea name="message" class="form-control bg-light border-0" rows="5" placeholder="Ceritakan kebutuhan bisnis Anda..." required></textarea>
+                    </div>
+                    <div class="col-12 mt-4">
+                        <button type="submit" class="btn btn-primary btn-lg px-5 w-100 rounded-pill shadow-sm fw-bold">
+                            Kirim Sekarang <i class="bi bi-send-fill ms-2"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container-fluid px-0 pt-5">
+    <div class="ratio ratio-21x9">
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.273616682703!2d106.8080273!3d-6.2276081!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f150495f32b1%3A0x6b80f12f913d09a0!2sDistrict%208!5e0!3m2!1sid!2sid!4v1700000000000" 
+            style="border:0;" allowfullscreen="" loading="lazy">
+        </iframe>
+    </div>
+</section>
+
+{% endblock %}
