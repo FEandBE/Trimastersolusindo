@@ -1,36 +1,149 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Trimastersolusindo Website
 
-## Getting Started
+Website modern yang dibangun dengan Next.js, React, dan Tailwind CSS untuk Trimastersolusindo.
 
-First, run the development server:
+## 🚀 Fitur
+
+- **Desain Modern**: UI yang bersih dan responsif
+- **Animasi Halus**: Menggunakan Framer Motion untuk animasi yang menarik
+- **Komponen Reusable**: Struktur komponen yang terorganisir
+- **TypeScript**: Type safety untuk pengembangan yang lebih baik
+- **Responsive Design**: Tampilan optimal di berbagai ukuran layar
+
+## 🛠️ Teknologi yang Digunakan
+
+- **Next.js 16.2.6** - React framework
+- **React 19.2.4** - UI library
+- **TypeScript** - Type safety
+- **Tailwind CSS v4** - Styling
+- **Framer Motion** - Animasi
+- **Lucide React** - Icon library
+
+## 📋 Prasyarat
+
+Sebelum memulai, pastikan Anda telah menginstal:
+- Node.js (versi 20 atau lebih tinggi)
+- npm, yarn, pnpm, atau bun
+
+## 📦 Instalasi
+
+1. Clone repository ini:
+```bash
+git clone https://github.com/FEandBE/Trimastersolusindo.git
+cd Trimastersolusindo/website
+```
+
+2. Install dependencies:
+```bash
+npm install
+# atau
+yarn install
+# atau
+pnpm install
+# atau
+bun install
+```
+
+## 🏃 Cara Menjalankan
+
+Jalankan development server:
 
 ```bash
 npm run dev
-# or
+# atau
 yarn dev
-# or
+# atau
 pnpm dev
-# or
+# atau
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Buka [http://localhost:3000](http://localhost:3000) di browser Anda untuk melihat hasilnya.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🏗️ Struktur Project
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+website/
+├── public/              # Static assets (images, icons)
+├── src/
+│   ├── app/            # Next.js App Router
+│   │   ├── layout.tsx  # Root layout
+│   │   ├── page.tsx    # Halaman utama
+│   │   └── globals.css # Global styles
+│   └── components/     # Komponen React
+│       ├── layout/     # Layout components (Navbar)
+│       └── sections/   # Section components (Hero, Services, Trust, CTA)
+├── package.json        # Dependencies dan scripts
+├── tsconfig.json       # TypeScript configuration
+├── next.config.ts      # Next.js configuration
+└── tailwind.config.js  # Tailwind CSS configuration
+```
 
-## Learn More
+## 🎨 Komponen Utama
 
-To learn more about Next.js, take a look at the following resources:
+### Layout Components
+- **Navbar**: Komponen navigasi di bagian atas halaman
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Section Components
+- **HeroSection**: Section hero dengan judul dan deskripsi utama
+- **ServicesSection**: Section yang menampilkan layanan yang ditawarkan
+- **TrustSection**: Section yang menampilkan kepercayaan/kredibilitas
+- **CTASection**: Section call-to-action untuk mendorong aksi pengguna
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📝 Customization
 
-## Deploy on Vercel
+### Mengubah Konten
+- Edit file di `src/app/page.tsx` untuk mengubah halaman utama
+- Edit komponen di `src/components/sections/` untuk mengubah setiap section
+- Edit `src/components/layout/Navbar.tsx` untuk mengubah navigasi
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Mengubah Styles
+- Edit `src/app/globals.css` untuk global styles
+- Gunakan Tailwind CSS classes di komponen untuk styling spesifik
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🚀 Build untuk Production
+
+```bash
+npm run build
+# atau
+yarn build
+# atau
+pnpm build
+# atau
+bun build
+```
+
+## 🌐 Deploy
+
+### Vercel (Recommended)
+Cara termudah untuk deploy adalah menggunakan [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme).
+
+### Lainnya
+Project ini juga dapat di-deploy ke platform lain yang mendukung Next.js seperti:
+- Netlify
+- AWS Amplify
+- Railway
+- Render
+
+## 📚 Learn More
+
+Untuk mempelajari lebih lanjut tentang teknologi yang digunakan:
+
+- [Next.js Documentation](https://nextjs.org/docs) - Fitur dan API Next.js
+- [React Documentation](https://react.dev) - React features dan concepts
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs) - Tailwind CSS utility classes
+- [Framer Motion Documentation](https://www.framer.com/motion/) - Animasi dengan Framer Motion
+- [TypeScript Documentation](https://www.typescriptlang.org/docs/) - TypeScript fundamentals
+
+## 🤝 Kontribusi
+
+Kontribusi sangat diterima! Jika Anda ingin berkontribusi:
+1. Fork repository ini
+2. Buat branch baru (`git checkout -b feature/AmazingFeature`)
+3. Commit changes Anda (`git commit -m 'Add some AmazingFeature'`)
+4. Push ke branch (`git push origin feature/AmazingFeature`)
+5. Buka Pull Request
+
+## 📄 License
+
+Project ini adalah private property dari Trimastersolusindo.
