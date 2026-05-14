@@ -27,13 +27,7 @@ Sebelum memulai, pastikan Anda telah menginstal:
 
 ## 📦 Instalasi
 
-1. Clone repository ini:
-```bash
-git clone https://github.com/FEandBE/Trimastersolusindo.git
-cd Trimastersolusindo/website
-```
-
-2. Install dependencies:
+1. Install dependencies:
 ```bash
 npm install
 # atau
