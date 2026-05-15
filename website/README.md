@@ -27,7 +27,7 @@ Sebelum memulai, pastikan Anda telah menginstal:
 
 ## 📦 Instalasi
 
-1. Install dependencies:
+Install dependencies:
 ```bash
 npm install
 # atau
